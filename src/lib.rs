@@ -4,8 +4,8 @@
 //! only print the enum variant, but not the content of the variant. For structs, it will only
 //! print the struct's name, and none of it's field's values.
 //!
-//! This is mainly usefull for enums when the variant is already usefull information. Since none of
-//! the inner values are printed, they don't have to implement `Debug`, so this can also be usefull
+//! This is mainly useful for enums when the variant is already useful information. Since none of
+//! the inner values are printed, they don't have to implement `Debug`, so this can also be useful
 //! in highly generic code where you just want a quick and simple way to get debug information.
 //!
 //! ## Example
@@ -30,8 +30,8 @@ use quote::{quote, ToTokens};
 /// types to also implement the `Debug` trait. In order to do this, the `Debug` impl that is
 /// generated is "shallow", meaning it will only print the enum variant names, but not their
 /// internal values. You can also `#[derive(ShallowDebug)]` for structs and unions, but it will not
-/// print the field values. In general this is more usefull for enums, since the variant can
-/// already tell you usefull information.
+/// print the field values. In general this is more useful for enums, since the variant can
+/// already tell you useful information.
 #[proc_macro_derive(ShallowDebug)]
 pub fn derive_shallow_debug(stream: proc_macro::TokenStream) -> proc_macro::TokenStream {
     let input = syn::parse_macro_input!(stream as syn::DeriveInput);
