@@ -11,7 +11,6 @@ in highly generic code where you just want a quick and simple way to get debug i
 ## Example
 
 ```rust
-# use shallow_debug::ShallowDebug;
 #[derive(ShallowDebug)]
 enum MyEnum<A, B, C> {
     A(A),
